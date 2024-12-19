@@ -1,0 +1,175 @@
+/* Basic reset and layout styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    margin: 0;
+    flex-direction: column;  /* Center content vertically */
+}
+
+h1 {
+    font-size: 26px;
+    color: #333;  /* Change header color to black */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* To-Do container styling */
+.todo-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    max-width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;  /* Stack elements vertically */
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.todo-container:hover {
+    transform: translateY(-5px);
+}
+
+/* Input and Button Section */
+input {
+    width: 80%;  /* Make the input field take up 80% of the container width */
+    padding: 12px 20px;
+    margin-bottom: 20px;  /* Add spacing below the input */
+    border: 2px solid #333;  /* Change border color to black */
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #000;  /* Change border color on focus to dark black */
+}
+
+button {
+    padding: 12px 18px;
+    font-size: 16px;
+    border: none;
+    background-color: #333;  /* Change button background to black */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;  /* Add spacing below the button */
+}
+
+button:hover {
+    background-color: #444;  /* Darker shade on hover */
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* To-Do List Styles */
+ul {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    max-height: 250px;
+    overflow-y: auto;
+    width: 100%;  /* Make the list take up 100% of the container width */
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 0.5s ease;
+}
+
+li:hover {
+    background-color: #f1f1f1;
+    transform: translateX(5px);
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #888;
+    background-color: #e0e0e0;
+}
+
+button.delete {
+    background-color: #f44336;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button.delete:hover {
+    background-color: #e53935;
+}
+
+button.complete {
+    background-color: #333;  /* Keep "complete" button background as black */
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button.complete:hover {
+    background-color: #444;  /* Darker shade of black */
+}
+
+/* Fade-in animation for tasks */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .todo-container {
+        width: 90%;  /* Ensure the container takes up 90% width on smaller screens */
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    input, button {
+        width: 100%;  /* Make input and button take up 100% width */
+    }
+
+    input {
+        margin-bottom: 15px;
+    }
+
+    button {
+        margin-top: 10px;
+    }
+}
